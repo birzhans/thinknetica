@@ -7,7 +7,7 @@ height = gets.chomp.to_i
 perfect_weight = (height - 110) * 1.15
 
 if perfect_weight >= 0
-	puts "Your perfect weight is #{perfect_weight}"
+  puts "Your perfect weight is #{perfect_weight}"
 else
-	puts "Your weight is already optimal"
+  puts "Your weight is already optimal"
 end
