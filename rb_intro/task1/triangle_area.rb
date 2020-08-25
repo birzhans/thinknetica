@@ -8,3 +8,5 @@ h = gets.chomp.to_i
 s = a * h * 0.5
 puts "Your triangle's area is #{s}"
 
+
+
