@@ -22,4 +22,3 @@ else
 	puts "No roots."
 end
 
-
