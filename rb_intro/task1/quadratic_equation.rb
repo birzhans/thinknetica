@@ -21,3 +21,4 @@ elsif d == 0
 else
 	puts "No roots."
 end
+
