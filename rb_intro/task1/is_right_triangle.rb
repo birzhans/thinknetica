@@ -18,7 +18,6 @@ elsif hypotenuse == b
 elsif hypotenuse == c
   right_side = a ** 2 + b ** 2
 end
-	
 
 if a == b && a == c
   puts "This is an equilateral and isosceles triangle."
