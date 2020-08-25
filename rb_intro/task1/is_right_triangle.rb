@@ -26,5 +26,3 @@ elsif a == b || b == c
 elsif hypotenuse && (hypotenuse ** 2 == right_side)
   puts "This is a right triangle"
 end
-
-
