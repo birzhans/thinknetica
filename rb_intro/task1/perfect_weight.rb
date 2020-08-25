@@ -11,4 +11,3 @@ if perfect_weight >= 0
 else
   puts "Your weight is already optimal"
 end
-
