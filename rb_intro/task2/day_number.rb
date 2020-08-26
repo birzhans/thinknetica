@@ -30,10 +30,10 @@ end
 
 days = day
 
-for idx in 0..(month - 2)
+0..(month - 2).each { |idx|
   puts idx
   days += months[idx]
-end
+}
 
 puts "The given date is #{days}th day."
 
