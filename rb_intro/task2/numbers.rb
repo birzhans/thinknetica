@@ -6,3 +6,5 @@ while n <= 100
 end
 
 puts arr
+
+
