@@ -30,3 +30,6 @@ purchase.each { |name, sub_hash|
   puts "#{name}: #{sub_hash[:price]} x #{sub_hash[:amount]} | Total: #{p_total}."
 }
 puts "The total sum of purchase is #{total}."
+
+  
+  
