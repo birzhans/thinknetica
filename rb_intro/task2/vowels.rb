@@ -8,3 +8,5 @@ vowels.each { |vowel|
 }
 
 puts vowels_and_index
+
+
