@@ -8,10 +8,8 @@ loop {
   puts "Please, enter product's name:"
   name = gets.chomp
 
-  if name == 'stop'
-    break
-  end
-
+  break if name == 'stop'
+ 
   puts "Enter product's price:"
   price = gets.chomp.to_f
 
