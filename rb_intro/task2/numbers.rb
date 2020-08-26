@@ -1,10 +1,4 @@
-arr = []
-n = 10
-while n <= 100
-  arr.push(n)
-  n += 5
-end
-
+arr = (5..100).step(5).to_a
 puts arr
 
 
