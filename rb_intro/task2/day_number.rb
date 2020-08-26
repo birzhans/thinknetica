@@ -36,3 +36,4 @@ for idx in 0..(month - 2)
 end
 
 puts "The given date is #{days}th day."
+
