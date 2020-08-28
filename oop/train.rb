@@ -48,3 +48,5 @@ class Train
     puts self.route.stations[place-1]
   end
 end
+
+
