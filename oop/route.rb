@@ -13,8 +13,12 @@ class Route
   end
 
   def delete_station(station)
-    stations.delete(station)
-    puts "Station #{station} was deleted."
+    if stations.any?
+      stations.delete(station)
+      puts "Station #{station} was deleted."
+    else
+      puts "There are no stations!"
+    end
   end
 end
 
