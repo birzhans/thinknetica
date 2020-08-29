@@ -8,8 +8,6 @@ class Train
     @type = type
     @num_of_cars = num_of_cars
     @speed = 0
-    @route = nil
-    @station = nil
     @place = 0
   end
 
@@ -22,17 +20,20 @@ class Train
   end
 
   def remove_car
-    self.num_of_cars += 1 if speed == 0
+    self.num_of_cars -= 1 if speed == 0 & num_of_cars > 0
   end
 
   def add_route(route)
     self.route = route
     self.station = route.stations[0]
+    route.start.add_train(self)
   end
 
   def go_forward
-    self.place += 1
-    self.station = self.route.stations[place]
+    if place < num_of_cars - 1
+      self.place += 1
+      self.station = self.route.stations[place]
+    end
   end
 
   def go_backward
@@ -41,11 +42,11 @@ class Train
   end
 
   def next_station
-    puts self.route.stations[place+1]
+    route.stations[place+1]
   end
 
   def previous_station
-    puts self.route.stations[place-1]
+    route.stations[place-1]
   end
 end
 
