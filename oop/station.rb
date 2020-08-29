@@ -10,22 +10,14 @@ class Station
     self.trains << train
   end
 
-  def freight_trains
-    trains.each { |train|
-      puts train if train.type == 'freight'
-    }
+  def train_by_type(type)
+    trains.each { |train| puts train if train.type == type }
   end
 
-  def passanger_trains
-    trains.each { |train|
-      puts train if train.type == 'passanger'
-    }
-  end
-
-  def send_train
+  def send_train(train)
     unless trains.empty?
-      puts "The train #{trains[0].number} was sent."
-      trains.drop(1)
+      puts "The train #{train} was sent."
+      trains.remove(train)
     end
   end
 end
