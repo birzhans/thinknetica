@@ -8,7 +8,6 @@ class Train
     @type = type
     @num_of_cars = num_of_cars
     @speed = 0
-    @place = 0
   end
 
   def stop
@@ -25,28 +24,40 @@ class Train
 
   def add_route(route)
     self.route = route
-    self.station = route.stations[0]
-    route.start.add_train(self)
+    self.station = route.start_station
+    station.add_train(self)
   end
 
   def go_forward
-    if place < num_of_cars - 1
-      self.place += 1
-      self.station = self.route.stations[place]
+    if station != route.end_station
+      station.send_train(self)
+      self.station = self.next_station
+      station.add_train(self)
+    else
+      puts "You are at the last station."
     end
   end
 
   def go_backward
-    place -= 1
-    self.station = self.route.stations[place]
+    if station != route.start_station
+      station.send_train(self)
+      self.station = self.previous_station
+      station.add_train(self)
+    else
+      puts "You are at the first station."
+    end
   end
 
   def next_station
-    route.stations[place+1]
+    route.stations[route.stations.index(station) + 1]
   end
 
   def previous_station
-    route.stations[place-1]
+    if station == route.start_station
+      nil
+    else
+      route.stations[route.stations.index(station) - 1]
+    end
   end
 end
 
