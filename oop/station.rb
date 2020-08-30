@@ -1,4 +1,5 @@
 class Station
+  attr_reader :name
   attr_accessor :trains
 
   def initialize(name)
@@ -17,7 +18,7 @@ class Station
   def send_train(train)
     unless trains.empty?
       puts "The train #{train} was sent."
-      trains.remove(train)
+      trains.delete(train)
     end
   end
 end
