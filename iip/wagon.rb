@@ -3,3 +3,5 @@ class Wagon
     @number = number
   end
 end
+
+
