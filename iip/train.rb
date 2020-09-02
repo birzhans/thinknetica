@@ -62,7 +62,9 @@ class Train
 
   private
   # added to private to restrict
-  # changig these attributes
+  # changing these attributes
   attr_writer :station, :route
-
 end
+
+
+
