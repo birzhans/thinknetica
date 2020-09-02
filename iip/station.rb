@@ -25,5 +25,6 @@ class Station
   # added to private to restrict
   # changig this attributes
   attr_writer :trains
-
 end
+
+
