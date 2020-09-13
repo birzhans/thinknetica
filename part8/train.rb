@@ -27,12 +27,8 @@ class Train
     register_instance
   end
 
-  def all_wagons(&block)
-    i = 0
-    while i < self.wagons.length
-      yield self.wagons[i]
-      i += 1
-    end
+  def each_wagon
+    self.wagons.each { |w| yield w }
   end
 
   def stop
