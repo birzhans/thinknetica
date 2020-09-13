@@ -248,12 +248,12 @@ class Session
     puts 'do you want to display the latest added train? (y/n)'
     binary_choice = gets.chomp
     if binary_choice == 'y'
-      self.trains[-1].all_wagons { |wagon| puts wagon.number }
+      self.trains[-1].each_wagon { |wagon| puts wagon.number }
     else
       puts "enter train's number"
       number = gets.chomp
       self.train = self.trains.select {|t| t.number == number }.first
-      self.train.trains.all_wagons { |wagon| puts wagon.number }
+      self.train.trains.each_wagon { |wagon| puts wagon.number }
     end
   end
 
