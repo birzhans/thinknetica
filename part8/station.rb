@@ -19,12 +19,8 @@ class Station
     register_instance
   end
 
-  def all_trains(&block)
-    i = 0
-    while i < self.trains.length
-      yield self.trains[i]
-      i += 1
-    end
+  def each_train
+    self.trains.each {|t| yield t }
   end
 
   def add_train(train)
