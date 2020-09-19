@@ -11,7 +11,7 @@ class Card
 
   validate :holder, :presence
   validate :number, :format, /./
-  validate :balance, :type, Integer
+  validate :balance, :valid_type, Integer
 
   def balance?
     balance.positive?
