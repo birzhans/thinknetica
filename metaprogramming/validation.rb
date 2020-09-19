@@ -24,29 +24,17 @@ module Validation
 
     def presence(attr_name, *_args)
       attribute = instance_variable_get(attr_name)
-      if attribute.nil? || attribute.empty?
-        raise ArgumentError, "Can't be nil or empty!"
-      else
-        puts 'Presence: OK'
-      end
+      raise ArgumentError, "Can't be nil or empty!" if attribute.nil? || attribute.empty?
     end
 
     def format(attr_name, form)
       attribute = instance_variable_get(attr_name)
-      if attribute =~ form
-        puts 'Format: OK'
-      else
-        raise ArgumentError, 'Format mismatch!'
-      end
+      raise ArgumentError, 'Format mismatch!' if attribute !~ form
     end
 
-    def type(attr_name, attr_type)
+    def valid_type(attr_name, attr_type)
       attribute = instance_variable_get(attr_name)
-      if attribute.is_a?(attr_type)
-        puts 'Type: OK'
-      else
-        raise TypeError, 'Type mismatch!'
-      end
+      raise TypeError, 'Type mismatch!' unless attribute.is_a?(attr_type)
     end
   end
 
