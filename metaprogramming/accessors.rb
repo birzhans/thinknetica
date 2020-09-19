@@ -27,7 +27,7 @@ module Accessors
 
         # attr_history
         define_method("#{instance}_history".to_sym) do
-          instance_variable_get(record_name) || []
+          instance_variable_get(record_name)[0..-2] || []
         end
       end
     end
